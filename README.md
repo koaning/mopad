@@ -1,5 +1,8 @@
 # mopad
+
 An anywidget that allows gamepad input in Marimo
+
+> There is an annoying thing with this API and that is that you need to hit a few buttons to actually connect the gamepad to the browser *before* starting this widget. Just be mindful of that. 
 
 ```python
 import traitlets
