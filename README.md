@@ -7,9 +7,7 @@ An anywidget that allows gamepad input in Marimo notebooks. Perfect for interact
 - 🎮 **Automatic gamepad detection** - No need to press buttons before starting
 - 📊 **Real-time visual feedback** - Connection status and button press information  
 - ⏱️ **Precise timestamp tracking** - Millisecond-accurate timing for button presses
-- 🔗 **Any button support** - Capture input from any gamepad button
-- 🔧 **Minimizable interface** - Hide the widget when you don't need the UI
-- 🚀 **Zero setup** - Works out of the box in Marimo
+- 🔗 **Any button support** - Capture input from any bluetooth gamepad
 
 ## Installation
 
