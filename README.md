@@ -1,8 +1,5 @@
 # mopad
 
-[![CI](https://github.com/vincentwarmerdam/mopad/actions/workflows/ci.yml/badge.svg)](https://github.com/vincentwarmerdam/mopad/actions/workflows/ci.yml)
-[![PyPI version](https://badge.fury.io/py/mopad.svg)](https://badge.fury.io/py/mopad)
-
 An anywidget that allows gamepad input in Marimo notebooks. Perfect for interactive data exploration, games, or any application that needs real-time gamepad input.
 
 ## Features
