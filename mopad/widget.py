@@ -1,5 +1,5 @@
-import traitlets
 import anywidget
+import traitlets
 
 
 class MopadWidget(anywidget.AnyWidget):
@@ -9,7 +9,7 @@ class MopadWidget(anywidget.AnyWidget):
     This widget automatically detects gamepad connection and provides
     visual feedback about the connection status.
     """
-    
+
     _esm = """
     function render({model, el}){
         let lastButtonPressed = model.get("last_button_pressed");
@@ -353,16 +353,16 @@ class MopadWidget(anywidget.AnyWidget):
 
     export default { render };
     """
-    
+
     last_button_pressed = traitlets.Int(-1).tag(sync=True)
     current_timestamp = traitlets.Float(0.0).tag(sync=True)
     previous_timestamp = traitlets.Float(0.0).tag(sync=True)
-    
+
     # Dpad and analog stick values (axes[0-3] are typically: left_x, left_y, right_x, right_y)
     axes = traitlets.List(trait=traitlets.Float(), default_value=[0.0, 0.0, 0.0, 0.0]).tag(sync=True)
     dpad_up = traitlets.Bool(False).tag(sync=True)
     dpad_down = traitlets.Bool(False).tag(sync=True)
     dpad_left = traitlets.Bool(False).tag(sync=True)
     dpad_right = traitlets.Bool(False).tag(sync=True)
-    
+
     button_id = traitlets.Int(0).tag(sync=True)  # Kept for backward compatibility
