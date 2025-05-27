@@ -12,7 +12,7 @@ class MopadWidget(anywidget.AnyWidget):
 
     _esm = """
     function render({model, el}){
-        let lastButtonPressed = model.get("last_button_pressed");
+        let currentButtonPress = model.get("current_button_press");
         let currentTimestamp = model.get("current_timestamp");
         let previousTimestamp = model.get("previous_timestamp");
         let axes = model.get("axes");
@@ -160,8 +160,8 @@ class MopadWidget(anywidget.AnyWidget):
         }
         
         function updateButtonDisplay() {
-            if (lastButtonPressed >= 0) {
-                buttonDisplay.textContent = `Last button pressed: ${lastButtonPressed}`;
+            if (currentButtonPress >= 0) {
+                buttonDisplay.textContent = `Current button press: ${currentButtonPress}`;
             } else {
                 buttonDisplay.textContent = "No button pressed yet";
             }
@@ -237,9 +237,9 @@ class MopadWidget(anywidget.AnyWidget):
                             // A button was pressed, update timestamps
                             previousTimestamp = currentTimestamp;
                             currentTimestamp = Date.now();
-                            lastButtonPressed = i;
+                            currentButtonPress = i;
                             
-                            model.set("last_button_pressed", lastButtonPressed);
+                            model.set("current_button_press", currentButtonPress);
                             model.set("current_timestamp", currentTimestamp);
                             model.set("previous_timestamp", previousTimestamp);
                             model.save_changes();
@@ -252,12 +252,13 @@ class MopadWidget(anywidget.AnyWidget):
                 }
                 
                 // Update axes (analog sticks) - always update these
+                
                 if (gamepad.axes && gamepad.axes.length >= 4) {
                     const newAxes = [
-                        gamepad.axes[0] || 0,  // Left stick X
-                        gamepad.axes[1] || 0,  // Left stick Y  
-                        gamepad.axes[2] || 0,  // Right stick X
-                        gamepad.axes[3] || 0   // Right stick Y
+                        Math.round((gamepad.axes[0] || 0) * 100) / 100,  // Left stick X
+                        Math.round((gamepad.axes[1] || 0) * 100) / 100,  // Left stick Y  
+                        Math.round((gamepad.axes[2] || 0) * 100) / 100,  // Right stick X
+                        Math.round((gamepad.axes[3] || 0) * 100) / 100   // Right stick Y
                     ];
                     
                     // Only update if values changed significantly (avoid noise)
@@ -326,8 +327,8 @@ class MopadWidget(anywidget.AnyWidget):
         updateTimestampDisplay();
         
         // Watch for changes from Python side
-        model.on("change:last_button_pressed", () => {
-            lastButtonPressed = model.get("last_button_pressed");
+        model.on("change:current_button_press", () => {
+            currentButtonPress = model.get("current_button_press");
             updateButtonDisplay();
         });
         
@@ -360,7 +361,7 @@ class MopadWidget(anywidget.AnyWidget):
     export default { render };
     """
 
-    last_button_pressed = traitlets.Int(-1).tag(sync=True)
+    current_button_press = traitlets.Int(-1).tag(sync=True)
     current_timestamp = traitlets.Float(0.0).tag(sync=True)
     previous_timestamp = traitlets.Float(0.0).tag(sync=True)
 
