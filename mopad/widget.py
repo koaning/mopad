@@ -2,7 +2,7 @@ import anywidget
 import traitlets
 
 
-class MopadWidget(anywidget.AnyWidget):
+class GamepadWidget(anywidget.AnyWidget):
     """
     An anywidget that allows gamepad input in Marimo.
     
