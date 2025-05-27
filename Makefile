@@ -30,3 +30,7 @@ clean:
 # Documentation target
 docs:
 	marimo export html-wasm --output docs --show-code --mode edit demo.py
+
+pypi: clean
+	uv build
+	uv publish
