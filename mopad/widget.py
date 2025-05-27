@@ -35,15 +35,19 @@ class MopadWidget(anywidget.AnyWidget):
         `;
         
         const header = document.createElement("div");
-        header.style.cssText = "display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;";
+        header.style.cssText = "position: relative; display: flex; justify-content: center; align-items: center; margin-bottom: 12px;";
         
         const title = document.createElement("h3");
         title.textContent = "🎮 Mopad Widget";
-        title.style.cssText = "margin: 0; color: #374151;";
+        title.style.cssText = "margin: 0; color: #374151; text-align: center;";
         
         const toggleButton = document.createElement("button");
         toggleButton.textContent = "−";
         toggleButton.style.cssText = `
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
             background: #6b7280;
             color: white;
             border: none;
@@ -121,12 +125,14 @@ class MopadWidget(anywidget.AnyWidget):
             isMinimized = !isMinimized;
             if (isMinimized) {
                 content.style.display = "none";
-                container.style.padding = "8px 16px";
+                container.style.padding = "16px";
                 toggleButton.textContent = "+";
+                header.style.cssText = "position: relative; display: flex; justify-content: center; align-items: center;";
             } else {
                 content.style.display = "block";
                 container.style.padding = "16px";
                 toggleButton.textContent = "−";
+                header.style.cssText = "position: relative; display: flex; justify-content: center; align-items: center; margin-bottom: 12px;";
             }
         });
 
