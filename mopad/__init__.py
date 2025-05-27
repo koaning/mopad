@@ -2,7 +2,7 @@
 mopad - An anywidget that allows gamepad input in Marimo
 """
 
-from .widget import MopadWidget
+from .widget import GamepadWidget
 
-__version__ = "0.1.0"
-__all__ = ["MopadWidget"]
+
+__all__ = ["GamepadWidget"]
