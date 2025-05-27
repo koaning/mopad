@@ -6,9 +6,9 @@ app = marimo.App(width="columns")
 
 @app.cell(column=0)
 def _(mo):
-    from mopad import MopadWidget
+    from mopad import GamepadWidget
 
-    widget = mo.ui.anywidget(MopadWidget())
+    widget = mo.ui.anywidget(GamepadWidget())
     widget
     return (widget,)
 
