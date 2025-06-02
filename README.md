@@ -2,6 +2,16 @@
 
 An anywidget that allows gamepad input in Marimo notebooks. Perfect for interactive data exploration, games, or any application that needs real-time gamepad input.
 
+## Preview 
+
+This GIF does a pretty good job of showing what you can expect. Note that you're looking at a dictionary that updates as a response to the gamepad. 
+
+![ScreenFlow](https://github.com/user-attachments/assets/1a615181-e042-4134-b4fa-987a063c3712)
+
+If you're keen to learn more about the details, you may appreciate this YouTube video. 
+
+
+
 ## Features
 
 - 🎮 **Automatic gamepad detection** - No need to press buttons before starting
