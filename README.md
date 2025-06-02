@@ -10,6 +10,7 @@ This GIF does a pretty good job of showing what you can expect. Note that you're
 
 If you're keen to learn more about the details, you may appreciate this YouTube video. 
 
+[![thumbnails 007](https://github.com/user-attachments/assets/1c92b392-a460-452a-844c-6725698ac1b8)](https://youtu.be/4fXLB5_F2rg)
 
 
 ## Features
