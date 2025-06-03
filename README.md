@@ -30,6 +30,8 @@ pip install mopad
 
 ### Basic Example
 
+If using marimo: 
+
 ```python
 import marimo as mo
 from mopad import MopadWidget
@@ -37,6 +39,12 @@ from mopad import MopadWidget
 # Create and display the widget
 gamepad = mo.ui.anywidget(MopadWidget())
 gamepad
+```
+
+And another cell can handle the values:
+
+```python
+gamepad.values
 ```
 
 For a full demo you can check [Github pages](https://koaning.github.io/mopad/).
