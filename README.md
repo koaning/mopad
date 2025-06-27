@@ -34,17 +34,17 @@ If using marimo:
 
 ```python
 import marimo as mo
-from mopad import MopadWidget
+from mopad import GamepadWidget
 
 # Create and display the widget
-gamepad = mo.ui.anywidget(MopadWidget())
+gamepad = mo.ui.anywidget(GamepadWidget())
 gamepad
 ```
 
 And another cell can handle the values:
 
 ```python
-gamepad.values
+gamepad.value
 ```
 
 For a full demo you can check [Github pages](https://koaning.github.io/mopad/).
