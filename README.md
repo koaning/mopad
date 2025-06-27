@@ -62,7 +62,7 @@ For a full demo you can check [Github pages](https://koaning.github.io/mopad/).
 | `dpad_left` | `bool` | True when D-pad left is pressed |
 | `dpad_right` | `bool` | True when D-pad right is pressed |
 | `button_id` | `int` | Legacy property for backward compatibility |
-k
+
 ## Gamepad Setup
 
 1. **Connect your gamepad** to your computer (USB or Bluetooth)
